@@ -1,6 +1,7 @@
 const canvas = document.getElementById("js-canvas");
 const colors = document.getElementsByClassName("js-color");
 const ctx = canvas.getContext("2d");
+const range = document.getElementById("js-range");
 
 canvas.width = 700;
 canvas.height = 700;
@@ -31,6 +32,10 @@ function chageColor(ev) {
   strokeColor = ev.target.style.backgroundColor;
   ctx.strokeStyle = strokeColor;
 }
+function hendleRangeWidth(ev) {
+  const RangeWidth = ev.target.value;
+  ctx.lineWidth = RangeWidth;
+}
 
 if (canvas) {
   canvas.addEventListener("mousemove", onMouseMove);
@@ -41,3 +46,6 @@ if (canvas) {
 Array.from(colors).forEach(function (color) {
   color.addEventListener("click", chageColor);
 });
+if (range) {
+  range.addEventListener("input", hendleRangeWidth);
+}
