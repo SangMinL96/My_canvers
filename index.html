@@ -8,6 +8,14 @@
   </head>
   <body>
     <canvas id="js-canvas"></canvas>
+    <input
+      id="js-range"
+      type="range"
+      min="0.1"
+      max="5"
+      step="0.1"
+      value="2.5"
+    />
     <div id="canvas_btn">
       <button id="js-mode">Fill</button>
       <button id="js-save">Save</button>
@@ -21,6 +29,8 @@
       <li class="js-color" style="background-color: blue;"></li>
       <li class="js-color" style="background-color: blueviolet;"></li>
       <li class="js-color" style="background-color: white;"></li>
+      <li class="js-color" style="background-color: rgb(0, 225, 255);"></li>
     </ul>
+    <script src="js/canvas.js"></script>
   </body>
 </html>
