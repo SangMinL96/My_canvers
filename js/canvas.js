@@ -13,14 +13,14 @@ ctx.lineWidth = 2.5;
 
 //
 let mouseValue = false;
-function onMouseDown() {
+onMouseDown = () => {
   mouseValue = true;
-}
-function onMouseUp() {
+};
+onMouseUp = () => {
   mouseValue = false;
-}
+};
 
-function onMouseMove(ev) {
+onMouseMove = (ev) => {
   const x = ev.offsetX;
   const y = ev.offsetY;
   if (!mouseValue) {
@@ -30,12 +30,12 @@ function onMouseMove(ev) {
     ctx.lineTo(x, y);
     ctx.stroke();
   }
-}
+};
 //
 //
 let modeValue = false;
 
-function hendlerMode() {
+hendlerMode = () => {
   if (modeValue) {
     modeValue = false;
     modeBtn.innerText = "Fill";
@@ -43,45 +43,45 @@ function hendlerMode() {
     modeValue = true;
     modeBtn.innerText = "Paint";
   }
-}
-function onFillng() {
+};
+onFillng = () => {
   if (modeValue === true) {
     ctx.fillRect(0, 0, 700, 700);
   }
-}
+};
 
 //
 //
-function chageColor(ev) {
+chageColor = (ev) => {
   strokeColor = ev.target.style.backgroundColor;
   ctx.strokeStyle = strokeColor;
   ctx.fillStyle = strokeColor;
-}
+};
 //
 //
 
-function hendleRangeWidth(ev) {
+hendleRangeWidth = (ev) => {
   const RangeWidth = ev.target.value;
   ctx.lineWidth = RangeWidth;
-}
+};
 
 //
 //
 
 //
 //
-function onSave(ev) {
+onSave = (ev) => {
   ev.preventDefault();
-}
+};
 //
 //
-function hendlerSave(ev) {
+hendlerSave = () => {
   const img = canvas.toDataURL();
   const link = document.createElement("a");
   link.href = img;
   link.download = "My-canvas";
   link.click();
-}
+};
 //
 //
 
@@ -93,7 +93,7 @@ if (canvas) {
   canvas.addEventListener("click", onFillng);
   canvas.addEventListener("contextmenu", onSave);
 }
-Array.from(colors).forEach(function (color) {
+Array.from(colors).forEach((color) => {
   color.addEventListener("click", chageColor);
 });
 if (range) {
